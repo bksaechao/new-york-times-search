@@ -1,10 +1,11 @@
 $("#search").on("click", function (){
-    let yourkey = "o3kvEj2HXoHJy8nusb7wrgGQmZPtY1i1"
+    let yourkey = "o3kvEj2HXoHJy8nusb7wrgGQmZPtY1i1";
     //$("#searchterm").val
     let search = $("#searchterm").val();
     let num = $("#retrieve").val();
     let startyear =  $("#startyear").val();
     let endyear =  $("#endyear").val();
+
 
     console.log(search + num + startyear + endyear);
 
@@ -22,7 +23,13 @@ $("#search").on("click", function (){
         response.response.docs.forEach(element => {
             console.log(element.headline.main);
             console.log("--" + element.byline.original)
-            $("#articles").append(`<div class="results"><h4>${element.headline.main}</h4><div>${element.byline.original}</div></div>`) 
+            $("#articles").append(`
+            <div class="results">
+            <h4>${element.headline.main}</h4>
+            <div> 
+                <div>${element.byline.original}</div>
+                <a href="${element.web_url}">Link</a> 
+            </div></div>`) 
         });
     });
 });
