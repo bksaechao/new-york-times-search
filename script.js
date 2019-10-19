@@ -16,14 +16,13 @@ $("#search").on("click", function (){
         method: "GET"
     }).then(function(response) {
 
+        let container = $("#container");
         console.log(response);
         console.log(response.response.docs);
         response.response.docs.forEach(element => {
             console.log(element.headline.main);
             console.log("--" + element.byline.original)
-            
-            
-            
+            $("#articles").append(`<div class="results"><h4>${element.headline.main}</h4><div>${element.byline.original}</div></div>`) 
         });
     });
 });
