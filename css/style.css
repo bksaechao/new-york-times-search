@@ -1,0 +1,14 @@
+.flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 95vh;
+    background-color: white;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+
+  .black{
+    background-color: black;
+
+  }
