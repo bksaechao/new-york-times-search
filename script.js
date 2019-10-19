@@ -3,6 +3,10 @@
 let yourkey = "o3kvEj2HXoHJy8nusb7wrgGQmZPtY1i1"
 //$("#searchterm").val
 let search = "election"
+//let num = //
+let startyear;
+let endyear;
+
 let queryURL = `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${search}&api-key=${yourkey}`
 
 
@@ -16,6 +20,7 @@ $.ajax({
     response.response.docs.forEach(element => {
         console.log(element.headline.main);
         console.log("--" + element.byline.original)
+        
         
         
     });
